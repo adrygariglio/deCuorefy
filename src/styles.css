@@ -1,1 +1,121 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #6AE1C9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(0deg, #55C6BA, #6AE1C9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(0deg, #55C6BA, #6AE1C9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+h3 {
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+h6 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 17px;
+  font-weight: 100;
+}
+
+
+.inputArea {
+  display:flex;
+  align-items: center;
+  height: 50%;
+  position:absolute;
+  left:0; right:0;
+  top:0; bottom:0;
+  max-width:100%;
+  max-height:100%;
+  overflow:auto;
+  margin:auto;
+}
+
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+}
+
+.inputForm {
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 200%;
+  padding: 80px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.25);
+  outline: none;
+}
+
+.btn-circle {
+  width: 49px;
+  height: 49px;
+  padding: 0;
+  border-radius: 35px;
+  margin-top: 50px;
+  background: rgba(255, 255, 255, 0);
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 48px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color: rgba(255, 255, 255, 1);
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.topBar {
+  margin:auto; /* Required */
+  position:absolute; /* Required */
+  top: 10%; /* Aligns at the bottom */
+  left:0;right:0; /* Aligns horizontal center */
+  max-height:100%; /* images bigger than 175 px  */
+  max-width:100%;  /* will be shrinked to size */
+}
+
+.bottomBar {
+  margin:auto; /* Required */
+  position:absolute; /* Required */
+  bottom:10%; /* Aligns at the bottom */
+  left:0;right:0; /* Aligns horizontal center */
+  max-height:100%; /* images bigger than 175 px  */
+  max-width:100%;  /* will be shrinked to size */
+}
