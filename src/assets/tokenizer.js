@@ -67,7 +67,7 @@ for (var i = 0; i < clength; i++) {
 }
 
 function hasCuore(s) {
-    return cfilter[s.toLowerCase()];
+    return cfilter[s.toLowerCase().replace("’", "'")];
 }
 
 function filterHasCuore(t) {
@@ -114,8 +114,8 @@ function tokenizeIT(text) {
     return tokenize(text,
                      [
                          {re:new RegExp(`([${pL}]+)(\\s+)`), type: "WORD"},
-                         {re:new RegExp(`([${pL}]*[^aeiouyAEIOUY]')([aeiouyAEIOUY])`), type: "WORD"},
-                         {re:/\w+/, type: "WORD"},
+                         {re:new RegExp(`([${pL}]*[^aeiouyAEIOUY]['’])([aeiouyAEIOUY])`), type: "WORD"},
+                         {re:new RegExp(`([${pL}]+)`), type: "WORD"},
                          {re:/\s+/, type: "WHITESPACES"},
                          {re:/\.\.\.+/, type: "PUNCTUATION"},
                          {re:/[?!]+/, type: "PUNCTUATION"},
