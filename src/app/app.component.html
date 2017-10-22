@@ -1,12 +1,25 @@
-<div class="inputForm" contentEditable="true" placeholder="Digita o incolla il testo qui..."></div>
 <nav class="floating-logo">
-  <h3>de <img src="assets/brokenheart_80_anim_gif.gif" width="35" height="35"> fy</h3>
+  <div class="brand">
+    <p class="lead"><small>de<img src="assets/brokenheart_80_anim_gif.gif" width="28" height="28">fy
+    <span style="color:grey">elimina <s>il libro cuore in ogni</s> testo</span></small></p>
+  </div>
 </nav>
 <nav class="floating-menu">
-  <button type="button" class="btn btn-default" onclick="cuoreefy()">DeCuorefy</button>
-  <button type="button" class="btn btn-default" onclick="decuoreefy()">Cuoreefy</button>
-  <button type="button" class="btn btn-default btn-circle">Share</button>
-  <button type="button" class="btn btn-default btn-circle">Microphone</button>
-  <button type="button" class="btn btn-default btn-circle">Hide</button>
-  <button type="button" class="btn btn-default btn-circle">Erease</button>
+  <button type="button" class="btn btn-default btn-lg" onclick="cuoreefy()"><img src="assets/ic_no_cuore.png" width="24" height="24"></button>
+  <button type="button" class="btn btn-default btn-lg" onclick="decuoreefy()"><img src="assets/ic_cuore.png" width="24" height="24"></button>
+  <div class="btn-group dropup">
+  <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img src="assets/ic_more.png" width="24" height="24">
+  </button>
+  <ul class="dropdown-menu dropdown-menu-right">
+    <li><a href="#">About</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Stats</a></li>
+    <li><a href="#">Hide removed word</a></li>
+    <li><a href="#">Change text size</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Share</a></li>
+  </ul>
+</div>
 </nav>
+<div class="inputForm" contentEditable="true" placeholder="Digita o incolla il testo qui..." autofocus></div>
