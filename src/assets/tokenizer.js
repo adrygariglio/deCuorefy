@@ -41,7 +41,7 @@ function tokenize ( s, patterns, deftok ) {
             }
         }
         if ( m > 0 ) {
-            // there is text between last token and currently 
+            // there is text between last token and currently
             // matched token - push that out as default or "unknown"
             tokens.push({
                 token : s.substr( 0, m ),
@@ -52,7 +52,7 @@ function tokenize ( s, patterns, deftok ) {
         }
         if ( t ) {
             // push current token onto sequence
-            tokens.push( t ); 
+            tokens.push( t );
         }
         base_index += ( m + (t ? t.token.length : 0) );
         s = s.substr( m + (t ? t.token.length : 0) );
@@ -125,7 +125,7 @@ function tokenizeIT(text) {
 }
 
 var instance = null;
-function markText() {
+function decuoreefy() {
     var context = document.querySelector(".inputForm");
     var t = tokenizeIT(context.textContent);
     if(instance == null) {
@@ -134,6 +134,18 @@ function markText() {
     instance.unmark();
     //instance.markRanges(filterHasCuore(t), {className: "cuore"});
     instance.markRanges(filterHasNotCuore(t), {className: "not-cuore"});
+    //instance.markRanges(filterByType(t, "PUNCTUATION"), {className: "PUNCTUATION"});
+    //instance.markRanges(filterByType(t, "WORD"), {className: "WORD"});
+}
+function cuoreefy() {
+    var context = document.querySelector(".inputForm");
+    var t = tokenizeIT(context.textContent);
+    if(instance == null) {
+        var instance = new Mark(context);
+    }
+    instance.unmark();
+    instance.markRanges(filterHasCuore(t), {className: "cuore"});
+    //instance.markRanges(filterHasNotCuore(t), {className: "not-cuore"});
     //instance.markRanges(filterByType(t, "PUNCTUATION"), {className: "PUNCTUATION"});
     //instance.markRanges(filterByType(t, "WORD"), {className: "WORD"});
 }
