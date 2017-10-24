@@ -65,6 +65,42 @@ a:active {
   outline: none;
 }
 
+@media screen and (max-width: 768px) {
+  .brand {
+    position: fixed;
+    font-weight: bold;
+    top: 26px;
+    left: 40px;
+    color: #E74C3C;
+  }
+
+  .mobileOptions {
+    position: fixed;
+    font-weight: bold;
+    top: 17px;
+    right: 40px;
+    color: #E74C3C;
+  }
+
+  .inputForm {
+    display: inherit;
+    position: absolute;
+    left:0; right:0;
+    top:0; bottom:0;
+    text-decoration: none;
+    text-align: left;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 160%;
+    padding-top: 120px;
+    padding-right: 40px;
+    padding-bottom: 80px;
+    padding-left: 40px;
+    color: black;
+    outline: none;
+  }
+}
+
 [contenteditable=true]:empty:before{
   content: attr(placeholder);
   display: block; /* For Firefox */
@@ -75,4 +111,8 @@ mark.cuore {
   color: rgba(0, 0, 0, 0.25);
   text-decoration: line-through;
   background: none;
+}
+
+.btnPrincipale {
+  width: 200px;
 }
