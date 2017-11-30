@@ -124,6 +124,14 @@ function tokenizeIT(text) {
                     );
 }
 
+function switch_visibility(id) {
+  var buttonElement = document.getElementById(id);
+  if(buttonElement.getAttribute("class").indexOf("visible") >= 0) {
+    buttonElement.setAttribute("class", buttonElement.getAttribute("class").replace("visible", "hidden"));
+  } else if (buttonElement.getAttribute("class").indexOf("hidden") >= 0) {
+    buttonElement.setAttribute("class", buttonElement.getAttribute("class").replace("hidden", "visible"));
+  }
+}
 var instance = null;
 function decuoreefy() {
     var context = document.querySelector(".inputForm");
@@ -136,6 +144,8 @@ function decuoreefy() {
     instance.markRanges(filterHasNotCuore(t), {className: "not-cuore"});
     //instance.markRanges(filterByType(t, "PUNCTUATION"), {className: "PUNCTUATION"});
     //instance.markRanges(filterByType(t, "WORD"), {className: "WORD"});
+    switch_visibility("btn_topbar_si_cuore");
+    switch_visibility("btn_topbar_no_cuore");
 }
 function cuoreefy() {
     var context = document.querySelector(".inputForm");
@@ -148,4 +158,6 @@ function cuoreefy() {
     //instance.markRanges(filterHasNotCuore(t), {className: "not-cuore"});
     //instance.markRanges(filterByType(t, "PUNCTUATION"), {className: "PUNCTUATION"});
     //instance.markRanges(filterByType(t, "WORD"), {className: "WORD"});
+    switch_visibility("btn_topbar_si_cuore");
+    switch_visibility("btn_topbar_no_cuore");
 }
