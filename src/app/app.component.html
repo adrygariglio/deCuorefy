@@ -6,26 +6,28 @@
   <div class="mobileOptions visible-xs">
     <button id="btn_topbar_no_cuore" type="button" class="btn btn-danger btn-lg visible" onclick="cuoreefy()"><img src="assets/ic_no_cuore.png" width="24" height="24"></button>
     <button id="btn_topbar_si_cuore"  type="button" class="btn btn-default btn-lg hidden" onclick="decuoreefy()"><img src="assets/ic_cuore.png" width="24" height="24"></button>
+    <a id="btn_toolbar_share" role="button" class="btn btn-default btn-lg" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdecuorefy.firebaseapp.com%2F&amp;src=sdkpreparse" target="_blank"><img src="assets/ic_share.png" width="24" height="24"></a>
   </div>
 </nav>
 
 <nav class="floating-menu hidden-xs" ng-hide="myValue">
   <button type="button" class="btn btn-danger btn-lg btnPrincipale" onclick="cuoreefy()"><img src="assets/ic_no_cuore.png" width="24" height="24"> Togli libro cuore</button>
   <button type="button" class="btn btn-default btn-lg" onclick="decuoreefy()"><img src="assets/ic_cuore.png" width="24" height="24"></button>
+  <a id="btn_floating_share" role="button" class="btn btn-default btn-lg" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdecuorefy.firebaseapp.com%2F&amp;src=sdkpreparse" target="_blank"><img src="assets/ic_share.png" width="24" height="24"></a>
+  <!--
   <div class="btn-group dropup">
-  <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <img src="assets/ic_more.png" width="24" height="24">
-  </button>
-  <ul class="dropdown-menu dropdown-menu-right">
-    <li><a href="#">About</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Stats</a></li>
-    <li><a href="#">Hide removed word</a></li>
-    <li><a href="#">Change text size</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Share</a></li>
-  </ul>
-</div>
+  <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/ic_share.png" width="24" height="24"></button>
+    <ul class="dropdown-menu dropdown-menu-right">
+      <li><a href="#">About</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Stats</a></li>
+      <li><a href="#">Hide removed word</a></li>
+      <li><a href="#">Change text size</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Share</a></li>
+    </ul>
+  </div>
+  -->
 </nav>
 
 <div class="inputForm" contentEditable="true" placeholder="Digita o incolla il testo qui..." autofocus></div>
