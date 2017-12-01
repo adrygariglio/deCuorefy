@@ -132,6 +132,46 @@ function switch_visibility(id) {
     buttonElement.setAttribute("class", buttonElement.getAttribute("class").replace("hidden", "visible"));
   }
 }
+function set_visibility(id, should_be_visible) {
+    var buttonElement = document.getElementById(id);
+    var keyword_to_add = "visible";
+    var keyword_to_remove = "hidden";
+    if(!should_be_visible) {
+        keyword_to_add = "hidden";
+        keyword_to_remove = "visible";
+    }
+    if(buttonElement.getAttribute("class").indexOf(keyword_to_remove) >= 0) {
+        buttonElement.setAttribute("class", buttonElement.getAttribute("class").replace(keyword_to_remove, keyword_to_add));
+    } else if (buttonElement.getAttribute("class").indexOf(keyword_to_add) < 0) {
+        buttonElement.setAttribute("class", buttonElement.getAttribute("class") + " " + keyword_to_add);
+    }
+}
+
+var urlParams;
+(window.onpopstate = function () {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+
+    urlParams = {};
+    while ((match = search.exec(query))) {
+        urlParams[decode(match[1])] = decode(match[2]);
+    }
+})();
+(window.onload = function () {
+    var context = document.querySelector(".inputForm");
+    if(urlParams["t"]) {
+        context.innerHTML = urlParams["t"];
+        if(urlParams["c"] == "1") {
+            cuoreefy();
+        } else {
+            decuoreefy();
+        }
+    }
+});
+
 var instance = null;
 function decuoreefy() {
     var context = document.querySelector(".inputForm");
@@ -144,8 +184,9 @@ function decuoreefy() {
     instance.markRanges(filterHasNotCuore(t), {className: "not-cuore"});
     //instance.markRanges(filterByType(t, "PUNCTUATION"), {className: "PUNCTUATION"});
     //instance.markRanges(filterByType(t, "WORD"), {className: "WORD"});
-    switch_visibility("btn_topbar_si_cuore");
-    switch_visibility("btn_topbar_no_cuore");
+    set_visibility("btn_topbar_si_cuore", false);
+    set_visibility("btn_topbar_no_cuore", true);
+    var url_to_share = window.location.protocol + "//" + window.location.host + window.location.pathname + "?t=" + encodeURIComponent(context.textContent) + "&c=0";
 }
 function cuoreefy() {
     var context = document.querySelector(".inputForm");
@@ -158,6 +199,7 @@ function cuoreefy() {
     //instance.markRanges(filterHasNotCuore(t), {className: "not-cuore"});
     //instance.markRanges(filterByType(t, "PUNCTUATION"), {className: "PUNCTUATION"});
     //instance.markRanges(filterByType(t, "WORD"), {className: "WORD"});
-    switch_visibility("btn_topbar_si_cuore");
-    switch_visibility("btn_topbar_no_cuore");
+    set_visibility("btn_topbar_si_cuore", true);
+    set_visibility("btn_topbar_no_cuore", false);
+    var url_to_share = window.location.protocol + "//" + window.location.host + window.location.pathname + "?t=" + encodeURIComponent(context.textContent) + "&c=1";
 }
