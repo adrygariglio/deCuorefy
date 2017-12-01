@@ -169,6 +169,11 @@ var urlParams;
         } else {
             decuoreefy();
         }
+    } else {
+        var url_to_share = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        var fb_sharer_url = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url_to_share) + "&src=sdkpreparse";
+        document.getElementById("btn_toolbar_share").setAttribute("href", fb_sharer_url);
+        document.getElementById("btn_floating_share").setAttribute("href", fb_sharer_url);
     }
 });
 
