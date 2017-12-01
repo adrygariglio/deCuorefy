@@ -187,8 +187,9 @@ function decuoreefy() {
     set_visibility("btn_topbar_si_cuore", false);
     set_visibility("btn_topbar_no_cuore", true);
     var url_to_share = window.location.protocol + "//" + window.location.host + window.location.pathname + "?t=" + encodeURIComponent(context.textContent) + "&c=0";
-    document.getElementById("btn_toolbar_share").setAttribute("href", "https://www.facebook.com/sharer/sharer.php?u=" + url_to_share + "%2F&amp;src=sdkpreparse");
-    document.getElementById("btn_floating_share").setAttribute("href", "https://www.facebook.com/sharer/sharer.php?u=" + url_to_share + "%2F&amp;src=sdkpreparse");
+    var fb_sharer_url = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url_to_share) + "&src=sdkpreparse";
+    document.getElementById("btn_toolbar_share").setAttribute("href", fb_sharer_url);
+    document.getElementById("btn_floating_share").setAttribute("href", fb_sharer_url);
 }
 function cuoreefy() {
     var context = document.querySelector(".inputForm");
@@ -204,6 +205,7 @@ function cuoreefy() {
     set_visibility("btn_topbar_si_cuore", true);
     set_visibility("btn_topbar_no_cuore", false);
     var url_to_share = window.location.protocol + "//" + window.location.host + window.location.pathname + "?t=" + encodeURIComponent(context.textContent) + "&c=1";
-    document.getElementById("btn_toolbar_share").setAttribute("href", "https://www.facebook.com/sharer/sharer.php?u=" + url_to_share + "%2F&amp;src=sdkpreparse");
-    document.getElementById("btn_floating_share").setAttribute("href", "https://www.facebook.com/sharer/sharer.php?u=" + url_to_share + "%2F&amp;src=sdkpreparse");
+    var fb_sharer_url = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url_to_share) + "&src=sdkpreparse";
+    document.getElementById("btn_toolbar_share").setAttribute("href", fb_sharer_url);
+    document.getElementById("btn_floating_share").setAttribute("href", fb_sharer_url);
 }
